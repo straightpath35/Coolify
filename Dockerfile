@@ -4,17 +4,9 @@ FROM node:18-alpine
 # Create app dir
 WORKDIR /usr/src/app
 
-# Install dependencies (use lockfile if present, else fall back and show verbose logs)
+# Install dependencies
 COPY package.json package-lock.json* ./
-
-RUN if [ -f package-lock.json ]; then \
-      echo "package-lock.json found — running npm ci"; \
-      npm ci --omit=dev --loglevel verbose; \
-    else \
-      echo "no package-lock.json — running npm install (fallback)"; \
-      npm install --omit=dev --loglevel verbose; \
-    fi
-
+RUN npm ci --omit=dev
 
 # Copy source
 COPY . .
