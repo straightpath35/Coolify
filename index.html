@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Coolify App - Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Coolify App (MariaDB + Uploads)</h1>
+
+    <section id="auth">
+      <h2>Register</h2>
+      <input id="regUser" placeholder="username" />
+      <input id="regPass" placeholder="password" type="password" />
+      <button id="regBtn">Register</button>
+
+      <h2>Login</h2>
+      <input id="logUser" placeholder="username" />
+      <input id="logPass" placeholder="password" type="password" />
+      <button id="logBtn">Login</button>
+    </section>
+
+    <section id="uploadSection" style="display:none;">
+      <h2>Upload File</h2>
+      <input type="file" id="fileInput" />
+      <button id="uploadBtn">Upload</button>
+
+      <h3>Your Files</h3>
+      <ul id="filesList"></ul>
+    </section>
+
+    <div id="message"></div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
